@@ -8,7 +8,6 @@ public class FileReading {
 
 
     private Scanner reader;
-    private String[] extensions = new String[] {".py", ".php", ".txt"};
 
     public FileReading() {
         reader = new Scanner(System.in);
