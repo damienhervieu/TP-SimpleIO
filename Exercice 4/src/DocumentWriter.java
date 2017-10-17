@@ -39,16 +39,21 @@ public class DocumentWriter {
             String line ="";
             while (!line.equals("quit")) {
                 line = reader.nextLine();
-                if (line.equals("quit")){
-                    writer.close();
-                } else {
-                    writer.write(line);
-                }
+                testLine(writer, line);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String testLine(FileWriter writer, String line) throws IOException {
+        if (line.equals("quit")){
+            writer.close();
+        } else {
+            writer.write(line + System.getProperty("line.separator"));
+        }
+        return line;
     }
 }
